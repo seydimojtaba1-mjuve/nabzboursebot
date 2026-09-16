@@ -2,7 +2,7 @@ name: NabzBourse Bot
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 5-10 * * 6,0,1,2,3'
   workflow_dispatch:
 
 jobs:
