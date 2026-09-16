@@ -140,10 +140,9 @@ def run_bot():
 
     market_df = get_market_snapshot_df()
 
-    if market_df is None:
-        print("ERROR: Market data not received.")
-        send_telegram_message("ERROR: Market data not received from TSETMC.")
-        return
+        if market_df is None or market_df.empty:
+            print("Market data not received (probably holiday). Skipping.")
+            return
 
     for symbol in SYMBOLS:
         try:
